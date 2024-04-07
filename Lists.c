@@ -11,7 +11,10 @@ int main(){
     person.value = 10;
     person.next = malloc(sizeof(int));
     person.next->value = 200;
-    person.next->next = NULL;
+    person.next->next = malloc(sizeof(int));
+    person.next->next->value = 300;
+    person.next->next->next = NULL;
+
 
     Node* curr = &person;
     while(curr != NULL){
@@ -19,7 +22,9 @@ int main(){
         curr = curr -> next;
     }
 
+    
 
     free(person.next);
+    free(person.next->next);
     return 0;
 }

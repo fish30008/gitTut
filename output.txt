@@ -1,0 +1,3 @@
+Lalala Bubub, John Weak
+
+Number of strings found and written to output file: 1
