@@ -1,67 +1,61 @@
 #include <stdio.h>
 
-// Константы для вычислений
-#define PENSION_RATE 0.0135 // Накопительная ставка
-#define MINIMUM_WAGE 4000   // Минимальная заработная плата
-#define MIN_PENSION 2620    // Минимальная пенсия
-#define FULL_STAZH_MALE_2024 34 // Полный стаж для мужчин с 1.07.2024
-#define FULL_STAZH_FEMALE_2024 34 // Полный стаж для женщин с 1.07.2024
-#define MIN_STAZH 15         // Минимальный стаж для пенсии
-#define PENSION_AGE 60       // Пенсионный возраст для мужчин
-#define PENSION_AGE_FEMALE 58 // Пенсионный возраст для женщин
+// Structure to represent information about a job
+struct Job {
+    float income;   // income
+    int yearsOfWork; // years of work
+    int monthsOfWork; // months of work
+};
 
-// Структура для хранения информации о стаже и доходе
-typedef struct {
-    int years;
-    int months;
-} Stazh;
+// Function to calculate the pension amount
+float calculatePension(struct Job jobs[], int numJobs) {
+    // Constant for the pension rate
+    const float pensionRate = 1.35 / 100;
+    float totalIncome = 0;
+    float totalYearsOfWork = 0; // Use float to include months in the calculation
 
-// Функция для вычисления размера пенсии
-float calculatePension(int totalStazhYears, float vav) {
-    return PENSION_RATE * totalStazhYears * vav;
-}
+    // Summing income and years of work across all jobs
+    for (int i = 0; i < numJobs; i++) {
+        totalIncome += jobs[i].income;
+        totalYearsOfWork += (jobs[i].yearsOfWork + jobs[i].monthsOfWork / 12.0); // Convert months to years
+    }
 
-// Функция для вычисления общего стажа в годах
-float calculateTotalStazh(Stazh stazh) {
-    return stazh.years + (stazh.months / 12.0);
+    // Calculating the pension amount
+    float pension = pensionRate * totalYearsOfWork * totalIncome;
+    return pension;
 }
 
 int main() {
-    // Ввод информации о стаже
-    Stazh stazh;
-    printf("Введите общий стаж (годы и месяцы через пробел): ");
-    scanf("%d %d", &stazh.years, &stazh.months);
+    // Minimum pension and standard years of work
+    const float minPension = 2620;
+    const int minYearsOfWork = 15;
 
-    // Ввод информации о доходе
-    float vav;
-    printf("Введите валоризированный среднемесячный застрахованный доход: ");
-    scanf("%f", &vav);
+    // Input the number of jobs
+    int numJobs;
+    printf("Enter the number of jobs: ");
+    scanf("%d", &numJobs);
 
-    // Вычисление общего стажа в годах
-    float totalStazhYears = calculateTotalStazh(stazh);
+    // Creating an array of structures to store information about each job
+    struct Job jobs[numJobs];
 
-    // Вычисление размера пенсии
-    float pension = calculatePension(totalStazhYears, vav);
+    // Input data for each job
+    for (int i = 0; i < numJobs; i++) {
+        printf("Enter the income for job %d: ", i + 1);
+        scanf("%f", &jobs[i].income);
+        printf("Enter the years of work for job %d: ", i + 1);
+        scanf("%d", &jobs[i].yearsOfWork);
+        printf("Enter the months of work for job %d: ", i + 1);
+        scanf("%d", &jobs[i].monthsOfWork);
+    }
 
-    // Вывод размера пенсии
-    printf("Размер пенсии составляет %.2f леев\n", pension);
+    // Calculating the pension
+    float pension = calculatePension(jobs, numJobs);
 
-    // Проверка на право на пенсию
-    if (totalStazhYears >= MIN_STAZH) {
-        printf("У вас есть право на пенсию.\n");
+    // Output the result
+    if (pension < minPension) {
+        printf("Your pension is less than 50%% of the minimum pension and is %.2f lei.\n", pension);
     } else {
-        printf("У вас не достаточно стажа для пенсии.\n");
-    }
-
-    // Проверка на минимальный стаж для неполной пенсии
-    if (totalStazhYears < MIN_STAZH) {
-        float partialPension = MIN_PENSION * (totalStazhYears / MIN_STAZH);
-        printf("Размер неполной пенсии составляет %.2f леев\n", partialPension);
-    }
-
-    // Проверка на пенсионный возраст
-    if (stazh.years >= PENSION_AGE) {
-        printf("Вы достигли пенсионного возраста.\n");
+        printf("Your pension is %.2f lei.\n", pension);
     }
 
     return 0;
