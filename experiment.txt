@@ -1,0 +1,100 @@
+Owner Name: Ethan
+Owner Surname: Rodriguez
+Product Name: TitanX Fitness Tracker
+Manufacturer: Nexus Dynamics
+Creation Date: 2024-12-07
+Whole Price: 321
+Unit Price: 47
+Quantity: 263
+Remaining Time until CCDate: 0 years, 7 months, 23 days
+
+Owner Name: Ava
+Owner Surname: Rodriguez
+Product Name: AeroShield Protector
+Manufacturer: Horizon Enterprises
+Creation Date: 2024-10-27
+Whole Price: 744
+Unit Price: 31
+Quantity: 686
+Remaining Time until CCDate: 0 years, 6 months, 13 days
+
+Owner Name: Olivia
+Owner Surname: Martinez
+Product Name: NanoGrip Gloves
+Manufacturer: OmniCorp
+Creation Date: 2023-09-24
+Whole Price: 344
+Unit Price: 67
+Quantity: 239
+Remaining Time until CCDate: -1 years, 5 months, 10 days
+
+Owner Name: Mason
+Owner Surname: Garcia
+Product Name: SkyLume Pro
+Manufacturer: Aurora Creations
+Creation Date: 2022-05-30
+Whole Price: 368
+Unit Price: 81
+Quantity: 197
+Remaining Time until CCDate: -2 years, 1 months, 16 days
+
+Owner Name: Jasmine
+Owner Surname: Brown
+Product Name: Zenith360 VR Headset
+Manufacturer: Horizon Enterprises
+Creation Date: 2021-04-25
+Whole Price: 783
+Unit Price: 91
+Quantity: 10
+Remaining Time until CCDate: -3 years, 0 months, 11 days
+
+Owner Name: Ethan
+Owner Surname: Rodriguez
+Product Name: TitanX Fitness Tracker
+Manufacturer: Synergy Manufacturing Co.
+Creation Date: 2021-02-26
+Whole Price: 1090
+Unit Price: 51
+Quantity: 911
+Remaining Time until CCDate: -4 years, 10 months, 12 days
+
+Owner Name: Logan
+Owner Surname: Patel
+Product Name: Zenith360 VR Headset
+Manufacturer: Nova Industries
+Creation Date: 2020-02-15
+Whole Price: 116
+Unit Price: 52
+Quantity: 39
+Remaining Time until CCDate: -5 years, 10 months, 1 days
+
+Owner Name: Jasmine
+Owner Surname: Jones
+Product Name: PulseDrive 3000
+Manufacturer: Horizon Enterprises
+Creation Date: 2013-07-06
+Whole Price: 840
+Unit Price: 67
+Quantity: 273
+Remaining Time until CCDate: -11 years, 2 months, 22 days
+
+Owner Name: Olivia
+Owner Surname: Patel
+Product Name: AeroShield Protector
+Manufacturer: Synergy Manufacturing Co.
+Creation Date: 2012-10-10
+Whole Price: 827
+Unit Price: 51
+Quantity: 774
+Remaining Time until CCDate: -12 years, 5 months, 26 days
+
+Owner Name: Ava
+Owner Surname: Nguyen
+Product Name: Zenith360 VR Headset
+Manufacturer: TitanTech Solutions
+Creation Date: 2012-06-28
+Whole Price: 389
+Unit Price: 52
+Quantity: 854
+Remaining Time until CCDate: -12 years, 2 months, 14 days
+

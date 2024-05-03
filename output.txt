@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 one.
 two.
 three .
+=======
+lalal.
+ happy .
+ new year .
+>>>>>>> e78be43bf5b3ed721ccf68b3e6167d7780d52741
 Number of sentences found and written to output file: 3
