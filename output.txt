@@ -1,3 +1,4 @@
-Lalala Bubub, John Weak
-
-Number of strings found and written to output file: 1
+one.
+two.
+three .
+Number of sentences found and written to output file: 3

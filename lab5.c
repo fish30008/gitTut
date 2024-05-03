@@ -51,13 +51,20 @@ void separateSentences() {
 
     // Read input file line by line
     while (fgets(input, sizeof(input), inputFile)) {
+        // Remove trailing newline characters
+        input[strcspn(input, "\n")] = '\0';
+
         // Tokenize input into sentences
         sentence = strtok(input, ".!?");
 
         // Write each sentence to output file
         while (sentence != NULL) {
-            fprintf(outputFile, "%s\n", sentence);
-            count++; // Increment count for each sentence written
+            // Check if the sentence is not empty or whitespace-only
+            if (strlen(sentence) > 0 && strspn(sentence, " \t\n\r\v\f") != strlen(sentence)) {
+                // Write the sentence to the output file with appropriate punctuation
+                fprintf(outputFile, "%s%c\n", sentence, (sentence[strlen(sentence) - 1] == '.' || sentence[strlen(sentence) - 1] == '!' || sentence[strlen(sentence) - 1] == '?') ? '\0' : '.');
+                count++; // Increment count for each non-empty and non-whitespace sentence written
+            }
             sentence = strtok(NULL, ".!?");
         }
     }
@@ -66,8 +73,8 @@ void separateSentences() {
     fclose(inputFile);
     fclose(outputFile);
 
-    // Display information about the number of strings found and written
-    printf("Number of strings found and written to output file: %d\n", count);
+    // Display information about the number of sentences found and written
+    printf("Number of sentences found and written to output file: %d\n", count);
 
     // Display path of output file
     printf("Output file (output.txt) created in the current directory.\n");
@@ -78,9 +85,10 @@ void separateSentences() {
         printf("Error opening output file for writing additional info!\n");
         exit(1);
     }
-    fprintf(outputFile, "Number of strings found and written to output file: %d\n", count);
+    fprintf(outputFile, "Number of sentences found and written to output file: %d\n", count);
     fclose(outputFile);
 }
+
 
 // Function to display content of output file in terminal
 void displayOutputFile() {
