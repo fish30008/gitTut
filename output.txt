@@ -1,4 +1,6 @@
-lalal.
- happy .
- new year .
-Number of sentences found and written to output file: 3
+cd "c:\Users\Blago\Documents\GitHub\gitTut\" ; if ($.
+) { gcc 5lab.
+c -o 5lab } ; if ($.
+) { .
+\5lab }.
+Number of sentences found and written to output file: 5

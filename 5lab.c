@@ -75,9 +75,9 @@ void calculate_remaining_time(info* inf) {
 
 // Function to write info to output.txt sorted in descending order based on remaining time until ccdate
 void write_output(info* info_array, int num_entries) {
-    FILE* output_file = fopen("output.txt", "w");
+    FILE* output_file = fopen("output1.txt", "w");
     if (output_file == NULL) {
-        printf("Error opening output.txt\n");
+        printf("Error opening output1.txt\n");
         return;
     }
 
@@ -118,7 +118,7 @@ void write_output(info* info_array, int num_entries) {
 
 // Function to copy contents of output.txt to experiment.txt
 void copy_output_to_experiment() {
-    FILE* output_file = fopen("output.txt", "r");
+    FILE* output_file = fopen("output1.txt", "r");
     if (output_file == NULL) {
         printf("Error opening output.txt\n");
         return;
@@ -144,7 +144,7 @@ int main() {
     srand(time(NULL)); // Seed for random number generator
 
     // Dynamic allocation of array of structures
-    int num_entries = 10;
+    int num_entries = 7;
     info* info_array = malloc(num_entries * sizeof(info));
 
     // Generate random information
